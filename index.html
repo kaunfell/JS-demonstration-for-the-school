@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom demo</title>
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <style>
+    /*original set*/
+      body {
+        display:block;
+
+      }
+
+      .maincontent {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+      }
+      .siteheader {
+        margin-top: 4em;
+        font-size: 2em;
+        font-weight: bold;
+
+      }
+      .maincontent {
+        margin-top:2em;
+        font-size:1.5em;
+        font-weight: bolder;
+        color:blue;
+
+
+      }
+      
+
+      /*extensions/adds*/
+      .task{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        margin-left: 25%;
+        flex-direction: column;
+        width: 50%;
+        height: 150px;
+        
+      }
+      button{
+        margin: 10px;
+      }
+
+      h2{
+        border: 1px solid green;
+        background: MediumSeaGreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 55px;
+      }
+    </style>
+  </head>
+  <body>
+
+
+
+    
+
+
+
+    <!--task 1 unfin! -->
+    <h2>Task 1</h2>
+    <div class="task">
+      <p>We have a string "asuntokionapajaa", give a word and search does the main string contain it. For example: paja.</p>
+      <input type="text" name="" value="" class="inputString" placeholder="Add a word" autocomplete="off">
+      <button type="submit" class="btn1" >Search a word</button>
+      <p class="textArea1" style=" text-align: center;"></p>
+      <button type="submit" class="btn1Second" style="opacity: 0;">Change the word</button>
+    </div>
+
+
+
+
+
+
+
+    <!-- task 2 -->
+    <h2>Task 2</h2>
+    <div class="task">
+        <button type="submit" class="btn2" >Set age</button>
+        <p class="ageText"></p>
+    </div>
+
+
+    <!--task 3 -->
+    <h2>Task 3</h2>
+    <div class="task" style="height: 250px;">
+    <button type="submit" class="btn3" >See the animals</button>
+    <p class="animals1" style="padding: 10px;" ></p>
+    <button type="submit" class="btn3second" style="opacity: 0;"  >Add animals</button>
+        <input type="text" name="" value="" class="animalInput" style="opacity: 0;" autocomplete="off">
+        <button type="submit" class="checkAnimalBtn" style="opacity: 0;">Search for an animal</button>
+        <p class="animalOutput"></p>
+    </div>
+
+    <!--task 5 -->
+    <h2>Task 5</h2>
+    <div class="task">
+    <button type="button" class="btn5" style="width: 20%">Get date</button>
+     <p class="addText5">Date</p>
+     <a href="https://github.com/kaunfell/Holidays"><p class="linkDate" style="visibility: hidden;">Check also this holidays calculator</p></a>       
+    </div>
+
+    <!-- task 6 -->
+    <h2>Task 6</h2>
+    <div class="task" style="height: 300px">
+        <div class="siteheader">
+        <div class="my-Header">
+          Dom test 1
+        </div>        
+        </div>
+        <main class="maincontent">
+        <button type="button" class="btn6" >Change text</button>
+        <p class="addText6">Change text</p>
+        </main>
+    </div>
+
+    <!--task 7 -->
+    <h2>Task 7</h2>
+    <div class="task">
+    <table id="sampleTable" >
+     <tr>
+      <td>Row1 cell1</td>
+      <td>Row1 cell2</td>
+     </tr>
+    <tr>
+      <td>Row2 cell1</td>
+      <td>Row2 cell2</td>
+     </tr>
+    </table><br>
+    <input class="btn7" type="button" onclick="insert_Row()" value="Insert row"> 
+    </div>
+
+
+
+
+    <!-- Task 8 -->
+    <!--has some original, given structure but modified slightly -->
+    <h2>Task 8, Roses</h2>
+
+    <div class="dropdownContainer" >
+
+    <ul class= "drpDwn" >
+    <select id="optionList" onchange="changeRose()" autocomplete="off"> 
+      <option value="yellow"> Yellow</option>  
+      <option value="red"> Red </option>  
+      <option value="pink"selected> Pink</option> 
+      </select>             
+    </ul> 
+
+     <div class="picture "> 
+        <img class="" id="imgPath" src="./resources/img/Rose-pink.jpg" onmouseover="hoverPicture()" onmouseout="normalPicture()">
+        <p class="messageListP"></p> 
+    </div>
+
+    </div>
+ 
+
+
+
+    <script src="./resources/js/Tasks.js"></script>
+  </body>
+</html>
