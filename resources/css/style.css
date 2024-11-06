@@ -30,6 +30,11 @@ header {
 
 
 /*adds*/
+body{
+    background-color: rgb(210, 245, 210);
+}
+
+
 .dropdownContainer{
     display: flex;
     justify-content: center;
@@ -68,3 +73,6 @@ img{
 margin-right: 40px;
 }
 
+.linkDate{
+    font-size: 20px;
+}
