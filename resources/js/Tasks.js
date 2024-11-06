@@ -174,39 +174,46 @@
         checklAnimalBtn.style.opacity = "1";
         animalInput.style.opacity = "1";
         btn3second.style.opacity = "0";
+
+
+
+
+   //check if animal in shelter
+   const animalOutput = document.querySelector(".animalOutput");
+   checklAnimalBtn.addEventListener("click", checkAnimal);
+   
+
+   function checkAnimal(){
+
+       animalInput = document.querySelector(".animalInput").value;
+    
+       //change the first letter of input to uppercase to match words in array (other way could have been to change the array items first letter to lowercase)
+       let char = animalInput.charAt(0).toUpperCase();
+       const remain = animalInput.slice(1); //every remaining letter but not the first
+       animalInput = char + remain;
+
+
+       if(animalInput === ""){
+           console.log(`Hey, check if an animal exists in our shelter`);
+           animalOutput.innerHTML = `Hey, check if an animal exists in our shelter`;
+
+       }else if(animalArr2.includes(animalInput)){
+           console.log(`Search result: ${animalInput} found`);
+           animalOutput.innerHTML = `We have a ${animalInput} here`;
+
+       }else{
+           console.log(`Search result: ${animalInput} not found`);
+           animalOutput.innerHTML = `We do not have a ${animalInput} here`;
+       }
+       
+       
+   }
+
+
     }
     
 
-    //check if animal in shelter
-    const animalOutput = document.querySelector(".animalOutput");
-    checklAnimalBtn.addEventListener("click", checkAnimal);
-    
-
-    function checkAnimal(){
-
-        animalInput = document.querySelector(".animalInput").value;
-     
-        //change the first letter of input to uppercase to match words in array (other way could have been to change the array items first letter to lowercase)
-        let char = animalInput.charAt(0).toUpperCase();
-        const remain = animalInput.slice(1); //every remaining letter but not the first
-        animalInput = char + remain;
-
-
-        if(animalInput === ""){
-            console.log(`Hey, check if an animal exists in our shelter`);
-            animalOutput.innerHTML = `Hey, check if an animal exists in our shelter`;
-
-        }else if(animalArr.includes(animalInput)){
-            console.log(`Search result: ${animalInput} found`);
-            animalOutput.innerHTML = `We have a ${animalInput} here`;
-
-        }else{
-            console.log(`Search result: ${animalInput} not found`);
-            animalOutput.innerHTML = `We do not have a ${animalInput} here`;
-        }
-        
-        
-    }
+ 
     
 
 
@@ -239,6 +246,13 @@
     function changeText(){
         addText6.innerHTML = "Ad astra per aspera";
         console.log("Ad astra per aspera");
+
+        //sets the text to the original after two seconds
+        setTimeout(() => {
+            addText6.innerHTML = "Change text again";
+            console.log("Changed the text to normal");
+          }, "2000");
+          
     }
 
 
@@ -305,11 +319,14 @@
 
             //the picture changes based on the value
             if(optionList.value == "red"){       
-                picture.src= "./resources/img/Rose-red.jpg";    
+                picture.src= "./resources/img/Rose-red.jpg"; 
+                console.log("Rose color: red");   
             }else if(optionList.value === "yellow"){
                 picture.src= "./resources/img/Rose-yellow.jpg";
+                console.log("Rose color: yellow");
             }else{
                 picture.src= "./resources/img/Rose-pink.jpg";
+                console.log("Rose color: pink");
             }
 
     }
@@ -341,6 +358,7 @@
     function messageList(){
        
         message.innerHTML += "\nNo need to click the picture";
+        console.log("\nNo need to click the picture");
         //scrolls to the message
         message.scrollIntoView();
         
